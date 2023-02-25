@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>  
+<style type="text/css">
+    
+    #menu {
+         background-color: #2a2a2a;
+         text-align: center;
+         height: 50px;
+         line-height: 50px;
+    }
+
+    #menu>a{
+         color: white;
+         font-size: 20px;
+         display: inline-block;
+         margin-right: 20px;
+         text-decoration: none;
+         font-weight: bold;
+            
+    }
+    
+
+
+</style>
+    
+    <div id="menu">
+
+        <a href="<%=root %>/index.jsp">Home</a>
+        <a href="#">Clothing</a>
+        <a href="#">Accessories</a>
+        <a href="#">Footwear</a>
+        <a href="#">Sale</a>
+        <a href="<%=root %>/bbs/list.jsp">Q&A</a>
+			<%
+				if (login.isResult()) {
+			%>
+			<a href="<%=root %>/login/logout.jsp"">Logout</a>
+			<%
+				} else {
+			%>
+			<a href="<%=root %>/login/login.jsp" >Login</a>
+			<%
+				}
+			%>
+    </div>

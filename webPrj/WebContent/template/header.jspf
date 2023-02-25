@@ -1,0 +1,52 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <style type="text/css">
+    *{
+		margin: 0px;
+		padding: 0px;
+	}
+    
+    #header {
+    background-color: black;
+    height:150px;
+    }
+    
+
+    
+    #title>a{
+    text-decoration: none;
+    color:white;
+    margin-left: 20px;
+    font-size: 70px;
+    margin-top: 0px;
+    }
+    
+    #loginCheck{
+		font-weight:bold;
+        font-size: 20px;
+        color: white;
+    }
+        
+    #idText{
+        color:#FFB300;
+        font-weight: normal;
+    }
+    
+    #ftText {
+    background-color: #2f2f2f;
+    color: #757575;
+    text-align: center;
+    }
+    </style>
+    
+   	<div id ="header"> 
+       		<div>
+   				<jsp:useBean id="login" class="prj.java.UserBean" scope = "session"/>
+				<%if(login.isResult()){ %>
+				<p id="loginCheck" align = "right">Hello! [ <span id="idText"><jsp:getProperty property="id" name="login"/></span> ]</p>
+				<%}else{ %>
+				<p id="loginCheck" align = "right">NOT LOGIN</p>
+				<%} %>
+			</div>
+           <span id="title"><a href="<%=root %>/index.jsp">NULL</a></span>
+    </div>
